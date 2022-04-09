@@ -36,7 +36,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  search(event: any): void {
-    console.log(event);
+  search(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+
+    this.moments = this.allMoments.filter((moment) => {
+      return moment.title.toLowerCase().includes(value.toLowerCase());
+    });
   }
 }
