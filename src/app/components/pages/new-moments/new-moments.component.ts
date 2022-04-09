@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Moment } from 'src/app/Interfaces/Moment';
 import { MessagesService } from 'src/app/services/messages.service';
 import { MomentService } from 'src/app/services/moment.service';
@@ -13,7 +15,8 @@ export class NewMomentsComponent implements OnInit {
 
   constructor(
     private momentService: MomentService,
-    private messagesService: MessagesService
+    private messagesService: MessagesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -32,7 +35,6 @@ export class NewMomentsComponent implements OnInit {
 
     this.messagesService.add('Momento adicionado com sucesso!');
 
-    // todo: redirect para home
-    console.log('Emitiu! Aeeê');
+    this.router.navigate(['/']);
   }
 }
