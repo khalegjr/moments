@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   allMoments: Moment[] = [];
   moments: Moment[] = [];
   baseApiURL = environment.baseApiURL;
+  faSearch = faSearch;
+  searchTerm: string = '';
 
   // todo: search
 
@@ -32,5 +34,9 @@ export class HomeComponent implements OnInit {
       this.allMoments = data;
       this.moments = data;
     });
+  }
+
+  search(event: any): void {
+    console.log(event);
   }
 }
