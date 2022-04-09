@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Moment } from '../Interfaces/Moment';
 import { environment } from 'src/environments/environment';
+import { Response } from '../Interfaces/Response';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,10 @@ export class MomentService {
   private apiURL = `${this.baseApiURL}api/moments`;
 
   constructor(private http: HttpClient) {}
+
+  getMoments(): Observable<Response<Moment[]>> {
+    return this.http.get<Response<Moment[]>>(this.apiURL);
+  }
 
   createMoment(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(this.apiURL, formData);
