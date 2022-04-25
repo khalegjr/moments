@@ -1,5 +1,9 @@
 # Moments
 
+Projeto para estudo de Angular.
+
+Frontend que acessa uma API para registro de momentos, um fake do instagram.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
